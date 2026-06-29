@@ -9,4 +9,4 @@
     X-Content-Type-Options = "nosniff"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "22"
