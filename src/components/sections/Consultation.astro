@@ -1,0 +1,13 @@
+---
+import ConsultationDesktop from '../desktop/Consultation.astro';
+import ConsultationMobile from '../mobile/Consultation.astro';
+---
+
+<section id="consultation">
+  <div class="hidden md:block">
+    <ConsultationDesktop />
+  </div>
+  <div class="block md:hidden">
+    <ConsultationMobile />
+  </div>
+</section>

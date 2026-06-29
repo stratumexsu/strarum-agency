@@ -1,0 +1,101 @@
+---
+import Card from '../ui/Card.astro';
+---
+
+<div class="below-fold px-6 py-10 md:py-20 relative bg-background text-primary min-h-0 md:min-h-[calc(100dvh-5rem)] flex flex-col justify-center overflow-hidden">
+  <!-- Subtle background glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+
+  <div class="max-w-6xl mx-auto w-full">
+    <div class="text-center mb-8 md:mb-10 reveal">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 mb-4 md:mb-6 select-none cursor-default">
+        <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+        <span class="text-[11px] font-bold text-primary/70 uppercase tracking-wider">Услуги</span>
+      </div>
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight md:leading-none text-primary mb-4 md:mb-6">
+        Система управляемого<br class="hidden md:inline" /> потока клиентов
+      </h2>
+      <p class="text-base md:text-xl text-primary/80 max-w-2xl mx-auto font-light">Мы не просто делаем посты, мы выстраиваем сложную архитектуру лидогенерации.</p>
+    </div>
+
+    <!-- Neater Asymmetric Bento Grid -->
+    <div class="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-3 gap-4 md:gap-6 md:overflow-visible no-scrollbar auto-rows-auto md:auto-rows-[280px]">
+      
+      <!-- Service 1: SEO (Span 2) -->
+      <div class="order-2 md:order-none md:col-span-2 group relative overflow-hidden rounded-3xl md:rounded-[2.5rem] bg-gradient-to-br from-primary to-[#233342] text-background border border-white/10 hover:border-accent/50 transition-all duration-500 p-5 md:p-8 flex flex-col justify-between shadow-xl hover:-translate-y-1 w-[85vw] max-w-[85vw] md:w-auto md:max-w-none h-[250px] md:h-auto shrink-0 md:shrink snap-center md:min-w-0 reveal">
+        <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-accent/20 rounded-full blur-[80px] group-hover:bg-accent/30 transition-colors duration-700"></div>
+        
+        <div class="relative z-10">
+          <div class="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+            <div class="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center shadow-sm">
+              <svg class="w-6 h-6 md:w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            </div>
+            <h3 class="text-xl md:text-3xl font-extrabold tracking-tight text-white leading-tight">Локальная SEO оптимизация</h3>
+          </div>
+          <p class="text-background/70 text-[13px] md:text-base leading-relaxed max-w-xl font-medium">
+            Локальная SEO-оптимизация Яндекс Карт и 2ГИС. Формируем стабильный органический трафик. Ваши потенциальные клиенты увидят вас раньше, чем конкурентов с соседней улицы.
+          </p>
+        </div>
+      </div>
+
+      <!-- Service 2: SMM (Span 1) -->
+      <div class="order-1 md:order-none group relative overflow-hidden rounded-3xl md:rounded-[2.5rem] bg-gradient-to-br from-accent to-[#4A1020] text-white border border-accent/30 hover:border-white/30 transition-all duration-500 p-5 md:p-8 flex flex-col shadow-xl hover:-translate-y-1 w-[85vw] max-w-[85vw] md:w-auto md:max-w-none h-[250px] md:h-auto shrink-0 md:shrink snap-center md:min-w-0 reveal">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-full pointer-events-none"></div>
+        <div class="relative z-10">
+          <div class="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+            <div class="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-md shadow-sm">
+               <svg class="w-6 h-6 md:w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path></svg>
+            </div>
+            <h3 class="text-xl md:text-2xl font-extrabold tracking-tight text-white leading-tight">SMM</h3>
+          </div>
+          <p class="text-white/80 leading-relaxed text-[13px] md:text-sm font-medium">
+            Разрабатываем контент-матрицу, <br class="hidden md:inline" />воронки вовлечения, прогрева и удержания. Ваш профиль начинает конвертировать просмотры в заинтересованых клиентов.
+          </p>
+        </div>
+      </div>
+
+      <!-- Service 3: AI Bots (Span 1) -->
+      <div class="order-3 md:order-none group relative overflow-hidden rounded-3xl md:rounded-[2.5rem] bg-gradient-to-br from-accent to-[#4A1020] text-white border border-accent/30 hover:border-white/30 transition-all duration-500 p-5 md:p-8 flex flex-col shadow-xl hover:-translate-y-1 w-[85vw] max-w-[85vw] md:w-auto md:max-w-none h-[250px] md:h-auto shrink-0 md:shrink snap-center md:min-w-0 reveal">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-full pointer-events-none"></div>
+        <div class="relative z-10">
+          <div class="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+            <div class="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-md shadow-sm">
+              <svg class="w-6 h-6 md:w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+            </div>
+            <h3 class="text-xl md:text-2xl font-extrabold tracking-tight text-white leading-tight">Чат-боты</h3>
+          </div>
+          <p class="text-white/80 leading-relaxed text-[13px] md:text-sm font-medium">
+            Внедряем ботов для Instagram и Telegram. Моментальная обработка входящего трафика, экономия времени администратора и автоматизация процесса возврата клиентов.
+          </p>
+        </div>
+      </div>
+
+      <!-- Service 4: Analytics (Span 2) -->
+      <div class="order-4 md:order-none md:col-span-2 group relative overflow-hidden rounded-3xl md:rounded-[2.5rem] bg-white text-primary border border-primary/10 hover:border-accent/40 transition-all duration-500 p-5 md:p-8 flex flex-col justify-between shadow-xl hover:-translate-y-1 w-[85vw] max-w-[85vw] md:w-auto md:max-w-none h-[250px] md:h-auto shrink-0 md:shrink snap-center md:min-w-0 reveal">
+        <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-[80px]"></div>
+        
+        <div class="relative z-10">
+          <div class="flex items-start gap-3 md:gap-4 mb-3 md:mb-6">
+            <div class="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-2xl bg-primary/5 border border-primary/10 flex items-center justify-center shadow-sm mt-0.5 md:mt-1">
+              <svg class="w-6 h-6 md:w-7 h-7 text-primary/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+            </div>
+            <div class="leading-tight pt-1 md:pt-0">
+              <h3 class="text-xl md:text-3xl font-extrabold tracking-tight text-primary inline">
+                Комплексное внедрение
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 md:py-0.5 rounded-full bg-accent/10 border border-accent/20 align-middle ml-3 md:ml-4 relative -top-[3px] md:-top-[5px]">
+                  <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shrink-0"></span>
+                  <span class="text-[10px] md:text-xs font-bold text-accent uppercase tracking-wider whitespace-nowrap leading-none mt-[1px]">Под ключ</span>
+                </span>
+              </h3>
+            </div>
+          </div>
+          <p class="text-primary/70 text-[13px] md:text-base leading-relaxed max-w-xl font-medium">
+            Проводим полную оптимизацию бизнеса по SEO, SMM и внедрению Чат Ботов. Вам не нужно придумывать темы постов или контролировать каждый наш шаг. Вы получаете готовые результаты и прозрачную аналитику решений.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

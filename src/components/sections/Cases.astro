@@ -1,0 +1,13 @@
+---
+import CasesDesktop from '../desktop/Cases.astro';
+import CasesMobile from '../mobile/Cases.astro';
+---
+
+<section id="cases">
+  <div class="hidden md:block">
+    <CasesDesktop />
+  </div>
+  <div class="block md:hidden">
+    <CasesMobile />
+  </div>
+</section>

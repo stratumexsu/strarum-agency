@@ -1,0 +1,37 @@
+---
+import Button from '../ui/Button.astro';
+
+const navItems = [
+  { label: 'Главная', href: '#' },
+  { label: 'Боли', href: '#pain-points' },
+  { label: 'Услуги', href: '#services' },
+  { label: 'Этапы', href: '#stages' },
+  { label: 'Кейсы', href: '#cases' },
+  { label: 'Прайс', href: '#pricing' },
+  { label: 'FAQ', href: '#faq' }
+];
+---
+
+<header class="fixed top-0 left-0 w-full z-50 bg-[#F5F2EB] backdrop-blur-md border-b border-primary/5">
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center">
+    <!-- Логотип и Название -->
+    <a href="#" class="flex items-center gap-0 shrink-0 lg:mr-12 mr-auto md:mr-8 group">
+      <img src="/logo.png" alt="Stratum Agency Logo" class="w-12 h-12 md:w-16 md:h-16 object-contain mix-blend-multiply -mr-1.5 shrink-0" decoding="async" />
+      <span class="text-xl md:text-2xl lg:text-3xl font-black text-primary tracking-tight">Stratum<span class="text-accent">Agency</span></span>
+    </a>
+    
+    <!-- Навигация, распределенная по ширине -->
+    <nav class="flex-1 flex items-center justify-center gap-6 lg:gap-10 mr-6">
+      {navItems.map(item => (
+        <a href={item.href} class="text-base lg:text-lg text-primary/80 hover:text-accent font-semibold transition-colors relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:scale-x-0 after:h-0.5 after:bg-accent hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left whitespace-nowrap">{item.label}</a>
+      ))}
+    </nav>
+
+    <!-- Кнопка Обсудить проект -->
+    <div class="shrink-0">
+      <Button variant="primary" href="#consultation" class="text-base px-6 py-2.5 shadow-sm hover:shadow-accent/40 rounded-full">
+        Обсудить проект
+      </Button>
+    </div>
+  </div>
+</header>

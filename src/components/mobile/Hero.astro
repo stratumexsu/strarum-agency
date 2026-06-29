@@ -1,0 +1,129 @@
+---
+import Button from '../ui/Button.astro';
+import Modal from '../ui/Modal.astro';
+---
+
+<div class="relative px-6 bg-background h-[calc(100dvh-5rem)] flex flex-col items-center justify-center text-center py-8 overflow-hidden">
+  <!-- Premium Grid + Mesh Background -->
+  <div class="absolute inset-0 bg-background pointer-events-none z-0 overflow-hidden">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,var(--color-primary)/[0.02]_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary)/[0.02]_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+    <div class="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-accent/10 rounded-full blur-[130px] animate-pulse" style="animation-duration: 10s; will-change: transform, opacity;"></div>
+    <div class="absolute top-[30%] -right-[10%] w-[50%] h-[65%] bg-primary/10 rounded-full blur-[140px] animate-pulse" style="animation-duration: 8s; will-change: transform, opacity;"></div>
+  </div>
+
+  <div class="relative z-10 flex flex-col items-center max-w-5xl mx-auto">
+    <h1 class="text-[12vw] sm:text-6xl md:text-8xl lg:text-[10rem] font-black leading-none tracking-tighter text-primary select-none mb-6 md:mb-8 pb-2 hero-title-fade">
+      Stratum<span class="text-accent">Agency</span>
+    </h1>
+    
+    <p class="text-lg sm:text-2xl md:text-4xl lg:text-5xl text-primary/80 font-bold tracking-tight leading-relaxed max-w-4xl mx-auto mb-10 md:mb-14 pb-1 hero-subtitle-fade">
+      Оптимизация малых бизнесов под ключ
+    </p>
+    
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-6 w-full hero-buttons-fade">
+      <Button variant="primary" href="#consultation" aria-label="Перейти к форме заказа бесплатного аудита потерь клиентов" class="text-xl px-12 py-5 shadow-[0_15px_40px_rgba(107,29,47,0.25)] hover:shadow-[0_20px_50px_rgba(107,29,47,0.5)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto text-center justify-center rounded-2xl">
+        Получить аудит
+      </Button>
+      <Button variant="primary" href="#cases" class="text-xl px-12 py-5 shadow-[0_15px_40px_rgba(26,37,48,0.05)] hover:shadow-[0_20px_50px_rgba(26,37,48,0.15)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto text-center justify-center !bg-white !text-primary border border-primary/10 hover:border-primary/20 rounded-2xl">
+        Смотреть кейсы
+      </Button>
+    </div>
+  </div>
+
+  <!-- Scroll Down Arrow Wrapped for non-interfering bounce -->
+  <div class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 z-20 hero-arrow-fade">
+    <a href="#pain-points" aria-label="Скролл к следующему блоку" class="text-primary/40 hover:text-accent transition-colors duration-300 animate-bounce group block">
+      <div class="w-12 h-12 rounded-full border border-primary/10 group-hover:border-accent/30 flex items-center justify-center bg-background/50 backdrop-blur-sm shadow-sm transition-all">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+      </div>
+    </a>
+  </div>
+
+  <style>
+    @keyframes hero-fade-in-up {
+      0% {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-title-fade {
+      opacity: 0;
+      animation: hero-fade-in-up 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      animation-delay: 100ms;
+      will-change: transform, opacity;
+    }
+
+    .hero-subtitle-fade {
+      opacity: 0;
+      animation: hero-fade-in-up 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      animation-delay: 250ms;
+      will-change: transform, opacity;
+    }
+
+    .hero-buttons-fade {
+      opacity: 0;
+      animation: hero-fade-in-up 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      animation-delay: 400ms;
+      will-change: transform, opacity;
+    }
+
+    .hero-arrow-fade {
+      opacity: 0;
+      animation: hero-fade-in-up 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      animation-delay: 650ms;
+      will-change: transform, opacity;
+    }
+  </style>
+
+  <Modal id="audit-modal">
+    <div class="flex flex-col text-left p-2">
+      <!-- Логотип и Название (Крупнее, слева) -->
+      <div class="flex items-center gap-0 mb-6">
+        <img src="/logo.png" alt="Stratum Agency Logo" class="w-16 h-16 md:w-20 md:h-20 object-contain mix-blend-multiply -ml-2 select-none" loading="lazy" decoding="async" />
+        <h3 class="text-3xl md:text-4xl font-black text-primary tracking-tight -ml-2">Stratum<span class="text-accent">Agency</span></h3>
+      </div>
+      
+      <!-- Заголовок формы (Крупный, жирный) -->
+      <h4 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary mb-8 leading-tight tracking-tight">
+        Свяжитесь с нами и<br/>
+        получите бесплатную<br/>
+        консультацию
+      </h4>
+      
+      <form class="space-y-4 w-full" onsubmit="event.preventDefault(); alert('Заявка отправлена!'); document.getElementById('audit-modal').close();">
+        <div>
+          <input type="text" required class="w-full px-5 py-4 rounded-2xl border border-primary/10 bg-primary/[0.02] text-primary placeholder-primary/40 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/15 focus:bg-white shadow-sm transition-all duration-300 font-semibold" placeholder="Ваше имя">
+        </div>
+        <div>
+          <input type="email" required class="w-full px-5 py-4 rounded-2xl border border-primary/10 bg-primary/[0.02] text-primary placeholder-primary/40 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/15 focus:bg-white shadow-sm transition-all duration-300 font-semibold" placeholder="Ваш Email">
+        </div>
+        <div>
+          <input type="text" class="w-full px-5 py-4 rounded-2xl border border-primary/10 bg-primary/[0.02] text-primary placeholder-primary/40 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/15 focus:bg-white shadow-sm transition-all duration-300 font-semibold" placeholder="Ваш Telegram (@username)">
+        </div>
+        <div>
+          <input type="tel" required class="w-full px-5 py-4 rounded-2xl border border-primary/10 bg-primary/[0.02] text-primary placeholder-primary/40 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/15 focus:bg-white shadow-sm transition-all duration-300 font-semibold" placeholder="Ваш телефон">
+        </div>
+        
+        <div class="space-y-3 pt-3 pb-1">
+          <label class="flex items-start gap-3 text-primary/70 text-sm cursor-pointer group">
+            <input type="checkbox" required class="mt-1 w-4 h-4 rounded border-primary/20 text-accent focus:ring-accent cursor-pointer accent-accent transition-colors">
+            <span class="group-hover:text-primary transition-colors leading-tight select-none font-medium">Я согласен с политикой конфиденциальности</span>
+          </label>
+          <label class="flex items-start gap-3 text-primary/70 text-sm cursor-pointer group">
+            <input type="checkbox" required class="mt-1 w-4 h-4 rounded border-primary/20 text-accent focus:ring-accent cursor-pointer accent-accent transition-colors">
+            <span class="group-hover:text-primary transition-colors leading-tight select-none font-medium">Я согласен получать рассылку</span>
+          </label>
+        </div>
+
+        <Button variant="primary" class="w-full mt-4 py-4.5 text-xl font-extrabold shadow-xl shadow-accent/20 hover:shadow-accent/40 rounded-2xl" type="submit" aria-label="Отправить форму">
+          Отправить заявку
+        </Button>
+      </form>
+    </div>
+  </Modal>
+</div>

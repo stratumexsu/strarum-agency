@@ -1,0 +1,13 @@
+---
+import StagesDesktop from '../desktop/Stages.astro';
+import StagesMobile from '../mobile/Stages.astro';
+---
+
+<section id="stages">
+  <div class="hidden md:block">
+    <StagesDesktop />
+  </div>
+  <div class="block md:hidden">
+    <StagesMobile />
+  </div>
+</section>

@@ -1,0 +1,13 @@
+---
+import FAQDesktop from '../desktop/FAQ.astro';
+import FAQMobile from '../mobile/FAQ.astro';
+---
+
+<section id="faq">
+  <div class="hidden md:block">
+    <FAQDesktop />
+  </div>
+  <div class="block md:hidden">
+    <FAQMobile />
+  </div>
+</section>

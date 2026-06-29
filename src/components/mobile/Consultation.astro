@@ -1,0 +1,87 @@
+---
+import Button from '../ui/Button.astro';
+---
+
+<div class="below-fold px-6 py-12 bg-[#F5F2EB] text-primary relative flex flex-col justify-center overflow-hidden border-t border-primary/5">
+  <!-- Soft background glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/3 rounded-full blur-[100px] pointer-events-none -z-10" style="will-change: transform; transform: translateZ(0);"></div>
+  
+  <div class="max-w-xl mx-auto w-full z-10 relative">
+    <div class="flex flex-col gap-8">
+      
+      <!-- Section Header (Clean, no redundant logo) -->
+      <div class="text-left reveal">
+        <div class="flex justify-center mb-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 select-none cursor-default">
+            <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+            <span class="text-[11px] font-bold text-primary/70 uppercase tracking-wider">Контакты</span>
+          </div>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-primary mb-3 tracking-tight leading-tight text-center">
+          Свяжитесь с нами и получите бесплатную консультацию
+        </h2>
+        <p class="text-primary/70 text-sm leading-relaxed font-medium text-center">
+          Мы детально разберем текущее состояние вашего бизнеса, проанализируем конкурентов в вашем сегменте и предложим пошаговый план по привлечению клиентов через SEO, чат-боты и SMM.
+        </p>
+      </div>
+
+      <!-- Obsidian Dark Form Card -->
+      <div class="reveal">
+        <div class="bg-primary border border-white/5 rounded-3xl p-6 shadow-2xl relative overflow-hidden">
+          <!-- Subtle inner gradient glow -->
+          <div class="absolute -top-24 -right-24 w-52 h-52 bg-accent/15 rounded-full blur-[50px] pointer-events-none -z-10 animate-pulse" style="animation-duration: 8s; will-change: transform, opacity; transform: translateZ(0);"></div>
+          
+          <form class="space-y-4 w-full relative z-10" onsubmit="event.preventDefault(); alert('Заявка отправлена!'); this.reset();">
+            <div>
+              <input type="text" required class="w-full px-4 py-3.5 rounded-xl border border-white/20 bg-white/[0.07] text-white text-sm placeholder-white/50 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-all duration-300 font-semibold" placeholder="Ваше имя">
+            </div>
+            <div>
+              <input type="email" required class="w-full px-4 py-3.5 rounded-xl border border-white/20 bg-white/[0.07] text-white text-sm placeholder-white/50 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-all duration-300 font-semibold" placeholder="Ваш Email">
+            </div>
+            <div>
+              <input type="text" class="w-full px-4 py-3.5 rounded-xl border border-white/20 bg-white/[0.07] text-white text-sm placeholder-white/50 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-all duration-300 font-semibold" placeholder="Ваш Telegram (@username)">
+            </div>
+            <div>
+              <input type="tel" required class="w-full px-4 py-3.5 rounded-xl border border-white/20 bg-white/[0.07] text-white text-sm placeholder-white/50 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-all duration-300 font-semibold" placeholder="Ваш телефон">
+            </div>
+            
+            <div class="space-y-3.5 pt-2">
+              <label class="flex items-start gap-3 text-white text-xs cursor-pointer group">
+                <div class="relative flex items-center justify-center mt-0.5 shrink-0">
+                  <input type="checkbox" required class="peer sr-only">
+                  <div class="w-4 h-4 rounded border border-white/30 bg-white/[0.07] group-hover:border-accent/50 peer-checked:bg-accent peer-checked:border-accent peer-checked:[&_svg]:scale-100 peer-checked:[&_svg]:opacity-100 flex items-center justify-center transition-all duration-300">
+                    <svg class="w-2.5 h-2.5 text-white scale-0 opacity-0 transition-all duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                </div>
+                <span class="text-white transition-colors leading-tight font-medium select-none">
+                  Я соглашаюсь с <a href="/docs/privacy.pdf" target="_blank" onclick="event.stopPropagation()" class="text-accent hover:opacity-80 underline font-semibold transition-opacity">политикой конфиденциальности</a> и <a href="/docs/personal-data.pdf" target="_blank" onclick="event.stopPropagation()" class="text-accent hover:opacity-80 underline font-semibold transition-opacity">обработкой персональных данных</a>
+                </span>
+              </label>
+              
+              <label class="flex items-start gap-3 text-white text-xs cursor-pointer group">
+                <div class="relative flex items-center justify-center mt-0.5 shrink-0">
+                  <input type="checkbox" required class="peer sr-only">
+                  <div class="w-4 h-4 rounded border border-white/30 bg-white/[0.07] group-hover:border-accent/50 peer-checked:bg-accent peer-checked:border-accent peer-checked:[&_svg]:scale-100 peer-checked:[&_svg]:opacity-100 flex items-center justify-center transition-all duration-300">
+                    <svg class="w-2.5 h-2.5 text-white scale-0 opacity-0 transition-all duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                </div>
+                <span class="text-white transition-colors leading-tight font-medium select-none">
+                  Я согласен получать <a href="/docs/marketing-consent.pdf" target="_blank" onclick="event.stopPropagation()" class="text-accent hover:opacity-80 underline font-semibold transition-opacity">рекламную рассылку</a>
+                </span>
+              </label>
+            </div>
+
+            <Button variant="primary" class="w-full mt-4 py-3.5 text-base font-extrabold shadow-xl shadow-accent/10 rounded-xl" type="submit" aria-label="Отправить форму">
+              Отправить заявку
+            </Button>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+---
+import HeroDesktop from '../desktop/Hero.astro';
+import HeroMobile from '../mobile/Hero.astro';
+---
+
+<section id="hero">
+  <div class="hidden md:block">
+    <HeroDesktop />
+  </div>
+  <div class="block md:hidden">
+    <HeroMobile />
+  </div>
+</section>

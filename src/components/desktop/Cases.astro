@@ -1,0 +1,612 @@
+---
+import Button from '../ui/Button.astro';
+---
+
+<section id="cases" class="px-6 py-16 md:py-24 bg-white text-primary relative min-h-[calc(100dvh-5rem)] flex flex-col justify-center overflow-hidden">
+  <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+  
+  <div class="max-w-6xl mx-auto relative z-10 w-full">
+    <div class="mb-16 reveal">
+      <div class="flex justify-center mb-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 select-none cursor-default">
+          <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+          <span class="text-sm font-bold text-primary/70 uppercase tracking-wider">Кейсы</span>
+        </div>
+      </div>
+      <div class="md:flex justify-between items-start">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4 md:mb-0 max-w-2xl tracking-tight">Результаты внедрения системы</h2>
+        <div class="flex flex-col items-start md:items-end gap-3 mt-4 md:mt-0 md:pt-3">
+          <p class="text-lg text-primary/70 max-w-sm md:text-right">Нажмите на карточку, чтобы изучить статистику подробно.</p>
+          <Button variant="primary" href="/docs/portfolio.pdf" target="_blank" class="text-sm px-5 py-2.5 rounded-full inline-flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            Открыть PDF-презентацию кейсов
+          </Button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESKTOP VERSION -->
+    <div class="hidden md:block">
+      <div class="grid grid-cols-2 gap-6">
+      <!-- Case 1 -->
+      <button onclick="openCaseModal(0)" class="w-full text-left group bg-background border border-primary/10 rounded-[2.5rem] p-8 hover:border-accent/50 hover:shadow-[0_10px_40px_rgba(107,29,47,0.1)] hover:-translate-y-1 transition-all duration-500 flex flex-col relative overflow-hidden reveal">
+        <div class="absolute top-8 right-8 w-10 h-10 rounded-full bg-primary/5 group-hover:bg-accent/10 flex items-center justify-center transition-colors">
+          <svg class="w-5 h-5 text-primary group-hover:text-accent transition-colors transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </div>
+        <h3 class="text-2xl font-bold mb-2 text-primary pr-12">Студия растяжки</h3>
+        <div class="inline-block px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-bold tracking-wide uppercase mb-6 self-start">Сфера фитнес услуг</div>
+        <p class="text-primary/80 mb-8 leading-relaxed flex-1">Локальное SEO + SMM комплекс = Постоянный поток новых клиентов</p>
+        <div class="mt-auto border-t border-primary/10 pt-6">
+          <div class="text-5xl font-extrabold text-primary group-hover:text-accent transition-colors tracking-tight">+120</div>
+          <div class="text-sm font-medium text-primary/60 mt-2 uppercase tracking-wide md:min-h-[2.5rem]">новых записей в месяц</div>
+        </div>
+      </button>
+
+      <!-- Case 2 -->
+      <button onclick="openCaseModal(1)" class="w-full text-left group bg-primary text-background border border-primary/10 rounded-[2.5rem] p-8 hover:border-accent/50 hover:shadow-[0_10px_40px_rgba(107,29,47,0.3)] hover:-translate-y-1 transition-all duration-500 flex flex-col relative overflow-hidden reveal">
+        <div class="absolute top-8 right-8 w-10 h-10 rounded-full bg-white/10 group-hover:bg-accent/20 flex items-center justify-center transition-colors">
+          <svg class="w-5 h-5 text-white group-hover:text-accent transition-colors transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </div>
+        <h3 class="text-2xl font-bold mb-2 pr-12">Премиум детейлинг центр</h3>
+        <div class="inline-block px-3 py-1 bg-white/10 text-white rounded-full text-xs font-bold tracking-wide uppercase mb-6 self-start">Сфера автоуслуг</div>
+        <p class="text-background/80 mb-8 leading-relaxed flex-1">SEO оптимизация карт и сайта = увеличение количества клиентов с большим чеком</p>
+        <div class="mt-auto border-t border-white/10 pt-6">
+          <div class="text-5xl font-extrabold text-white group-hover:text-accent transition-colors tracking-tight">x3</div>
+          <div class="text-sm font-medium text-white/60 mt-2 uppercase tracking-wide md:min-h-[2.5rem]">рост высокомаржинальных заявок из бесплатного поиска</div>
+        </div>
+      </button>
+
+      <!-- Case 3 -->
+      <button onclick="openCaseModal(2)" class="w-full text-left group bg-gradient-to-br from-accent to-[#4A1020] text-white rounded-[2.5rem] p-8 hover:shadow-[0_10px_40px_rgba(107,29,47,0.4)] hover:-translate-y-1 transition-all duration-500 flex flex-col relative overflow-hidden reveal">
+        <div class="absolute top-8 right-8 w-10 h-10 rounded-full bg-white/10 group-hover:bg-white/20 flex items-center justify-center transition-colors">
+          <svg class="w-5 h-5 text-white transform group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </div>
+        <h3 class="text-2xl font-bold mb-2 pr-12">Салон красоты</h3>
+        <div class="inline-block px-3 py-1 bg-white/20 text-white rounded-full text-xs font-bold tracking-wide uppercase mb-6 self-start">Сфера бьюти услуг</div>
+        <p class="text-white/80 mb-8 leading-relaxed flex-1">Автоматизация записи в 3 клика 24/7. Возврат "уснувших" клиентов.</p>
+        <div class="mt-auto border-t border-white/20 pt-6">
+          <div class="text-5xl font-extrabold text-white tracking-tight">+30%</div>
+          <div class="text-sm font-medium text-white/80 mt-2 uppercase tracking-wide md:min-h-[2.5rem]">спасенных заявок ночью и в часы пик</div>
+        </div>
+      </button>
+
+      <!-- Case 4 -->
+      <button onclick="openCaseModal(3)" class="w-full text-left group bg-background border border-primary/10 rounded-[2.5rem] p-8 hover:border-accent/50 hover:shadow-[0_10px_40px_rgba(107,29,47,0.1)] hover:-translate-y-1 transition-all duration-500 flex flex-col relative overflow-hidden reveal">
+        <div class="absolute top-8 right-8 w-10 h-10 rounded-full bg-primary/5 group-hover:bg-accent/10 flex items-center justify-center transition-colors">
+          <svg class="w-5 h-5 text-primary group-hover:text-accent transition-colors transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </div>
+        <h3 class="text-2xl font-bold mb-2 text-primary pr-12">Specialty кофейня</h3>
+        <div class="inline-block px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-bold tracking-wide uppercase mb-6 self-start -ml-1">Сфера общепита</div>
+        <p class="text-primary/80 mb-8 leading-relaxed flex-1">Полная SEO оптимизация карт + новая контент-матрица = постоянный поток клиентов на протяженнии всего рабочего дня</p>
+        <div class="mt-auto border-t border-primary/10 pt-6">
+          <div class="text-5xl font-extrabold text-primary group-hover:text-accent transition-colors tracking-tight">14 часов</div>
+          <div class="text-sm font-medium text-primary/60 mt-2 uppercase tracking-wide md:min-h-[2.5rem]">непрерывной посадки — от утренних завтраков до вечерней алко-карты</div>
+        </div>
+      </button>
+    </div>
+  </div>
+
+
+    </div> <!-- closes max-w-6xl -->
+
+      <!-- Mobile Modal with absolute zero SVG or chart coordinates -->
+      <!-- Interactive Modal for Cases -->
+  <div id="case-popup-overlay" class="fixed inset-0 bg-primary/40 backdrop-blur-md z-[100] opacity-0 pointer-events-none transition-opacity duration-300 ease-out flex items-center justify-center px-4">
+    <div id="case-popup-card" class="bg-background w-full max-w-5xl rounded-3xl md:rounded-[3rem] p-6 md:p-12 border border-primary/10 shadow-[0_20px_50px_rgba(26,37,48,0.15)] transform scale-95 opacity-0 transition-[opacity,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] relative overflow-hidden flex flex-col lg:flex-row gap-8 md:gap-10 max-h-[85dvh] overflow-y-auto">
+      <!-- Glow -->
+      <div class="absolute -top-24 -right-24 w-64 h-64 bg-accent/5 rounded-full blur-[80px] pointer-events-none -z-10"></div>
+      
+      <button onclick="closeCaseModal()" class="absolute top-4 right-4 md:top-6 md:right-6 w-12 h-12 md:w-12 md:h-12 bg-white hover:bg-primary/5 hover:shadow-lg rounded-full flex items-center justify-center text-primary transition-all duration-300 group z-20 shadow-sm border border-primary/5 cursor-pointer" aria-label="Закрыть">
+        <svg class="w-6 h-6 md:w-6 md:h-6 group-hover:rotate-90 transition-transform duration-300 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+      
+      <div class="lg:w-[55%] relative z-10 flex flex-col justify-center mt-6 md:mt-0">
+        <div id="case-popup-tag" class="inline-block px-4 py-1.5 bg-accent/10 text-accent rounded-full text-xs md:text-sm font-extrabold tracking-wide uppercase mb-4 self-start select-none"></div>
+        <h3 id="case-popup-title" class="text-2xl md:text-4xl font-black text-primary tracking-tight mb-6 leading-tight"></h3>
+        
+        <div class="space-y-4 mb-8">
+          <div class="bg-primary/5 rounded-2xl p-5 border border-primary/5">
+            <div class="text-[10px] md:text-xs text-primary/50 uppercase tracking-wider font-extrabold mb-2">Проблема клиента</div>
+            <p id="case-popup-prob" class="text-primary/80 text-sm md:text-base font-semibold leading-relaxed"></p>
+          </div>
+          <div class="bg-white rounded-2xl p-5 border border-primary/5 shadow-sm">
+            <div class="text-[10px] md:text-xs text-accent uppercase tracking-wider font-extrabold mb-2">Что сделало Stratum Agency</div>
+            <p id="case-popup-sol" class="text-primary/80 text-sm md:text-base font-semibold leading-relaxed"></p>
+          </div>
+        </div>
+        
+        <div class="bg-accent/5 rounded-2xl p-6 border border-accent/10 flex items-center gap-6">
+          <div>
+            <div class="text-[10px] md:text-xs text-primary/50 uppercase tracking-wider font-extrabold mb-1">Главный результат</div>
+            <div class="text-primary/70 text-xs md:text-sm font-semibold">После внедрения системы</div>
+          </div>
+          <div id="case-popup-result" class="text-3xl md:text-5xl font-black text-accent ml-auto tracking-tight"></div>
+        </div>
+      </div>
+
+      <div class="lg:w-[45%] relative flex flex-col items-stretch justify-between bg-[#fbfbfa] rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-8 pt-20 md:pt-24 min-h-[300px] md:min-h-[380px] overflow-hidden border border-primary/5 shrink-0 shadow-inner">
+        <!-- Abstract background elements -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-[60px]"></div>
+        
+        <div class="absolute top-4 left-6 md:top-6 md:left-6 text-xs md:text-sm font-extrabold text-primary/50 uppercase tracking-wider z-20 select-none">Рост метрики</div>
+        
+        <!-- Bar Chart Container -->
+        <div id="chart-bar-container" class="absolute inset-x-6 top-20 bottom-6 flex flex-col justify-end hidden">
+          <!-- Grid Area -->
+          <div class="relative flex-1 w-full">
+            <!-- Grid lines -->
+            <div class="absolute bottom-[33%] left-0 right-0 border-t border-dashed border-primary/10 pointer-events-none"></div>
+            <div class="absolute bottom-[66%] left-0 right-0 border-t border-dashed border-primary/10 pointer-events-none"></div>
+            
+            <div class="absolute inset-0 flex items-end gap-6 md:gap-8 pb-1">
+              <!-- Bar 1 (Before) -->
+              <div class="flex-1 flex flex-col items-center justify-end h-full relative">
+                <!-- Value Badge -->
+                <div id="case-bar-val-1" class="text-primary/70 font-bold opacity-0 transition-all duration-500 delay-[800ms] text-xs bg-white border border-primary/10 px-2.5 py-1 rounded-md mb-2 transform translate-y-2 shadow-sm select-none"></div>
+                <!-- Bar -->
+                <div id="case-bar-1" class="w-full max-w-[60px] bg-primary/10 rounded-t-lg transition-all duration-[1500ms] ease-[cubic-bezier(0.25,1,0.5,1)] h-[10%] border border-primary/5 hover:bg-primary/20"></div>
+              </div>
+              
+              <!-- Bar 2 (After) -->
+              <div class="flex-1 flex flex-col items-center justify-end h-full relative">
+                <!-- Value Badge -->
+                <div id="case-bar-val-2" class="text-white font-extrabold opacity-0 transition-all duration-500 delay-[1200ms] text-xs bg-accent px-2.5 py-1 rounded-md mb-2 shadow-md shadow-accent/20 transform translate-y-2 select-none"></div>
+                <!-- Bar -->
+                <div id="case-bar-2" class="w-full max-w-[60px] bg-gradient-to-t from-accent to-[#b53450] rounded-t-lg transition-all duration-[1500ms] ease-[cubic-bezier(0.25,1,0.5,1)] delay-200 h-[10%] shadow-[0_4px_25px_rgba(107,29,47,0.3)] border border-accent/20"></div>
+              </div>
+            </div>
+          </div>
+          <!-- X-Axis Labels -->
+          <div class="flex justify-between text-[10px] font-bold text-primary/50 uppercase tracking-wider pt-3 border-t border-primary/10 select-none">
+            <div class="flex-1 text-center">До оптимизации</div>
+            <div class="flex-1 text-center text-accent">С системой Stratum</div>
+          </div>
+        </div>
+
+        <!-- Line Chart Container -->
+        <div id="chart-line-container" class="absolute inset-x-6 top-20 bottom-6 flex flex-col justify-end hidden">
+          <!-- Grid Area -->
+          <div class="relative flex-1 w-full">
+            <!-- Grid lines -->
+            <div class="absolute bottom-[33%] left-0 right-0 border-t border-dashed border-primary/10 pointer-events-none"></div>
+            <div class="absolute bottom-[66%] left-0 right-0 border-t border-dashed border-primary/10 pointer-events-none"></div>
+            
+            <!-- SVG Chart -->
+            <svg class="absolute inset-0 w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 100 100">
+              <defs>
+                <linearGradient id="chart-area-grad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#6B1D2F" stop-opacity="0.2" />
+                  <stop offset="100%" stop-color="#6B1D2F" stop-opacity="0.0" />
+                </linearGradient>
+              </defs>
+              <!-- Area fill under the line -->
+              <path id="case-line-area" d="M 0,100 Q 30,100 100,10 L 100,100 L 0,100 Z" fill="url(#chart-area-grad)" class="opacity-0 transition-opacity duration-[1500ms] delay-[1000ms]" />
+              <!-- Line drawing -->
+              <path id="case-line-path" d="M 0,100 Q 30,100 100,10" fill="none" stroke="#6B1D2F" stroke-width="4" stroke-linecap="round" vector-effect="non-scaling-stroke" class="drop-shadow-[0_4px_10px_rgba(107,29,47,0.35)]" style="stroke-dasharray: 1000; stroke-dashoffset: 1000; transition: stroke-dashoffset 2.0s ease-in-out;" />
+            </svg>
+            
+            <!-- Dynamic HTML Dots Container -->
+            <div id="case-line-dots-container"></div>
+
+            <!-- Values for line chart -->
+            <div class="absolute bottom-4 left-0 text-xs font-bold text-primary/70 bg-white border border-primary/10 px-2.5 py-1.5 rounded-md shadow-sm transition-all duration-500 opacity-0 transform translate-y-2 z-20 whitespace-nowrap select-none" id="case-line-val-1" style="transform: translateX(0%);"></div>
+            <div class="absolute bottom-[96%] right-0 text-xs font-extrabold text-white bg-accent px-3 py-1.5 rounded-lg shadow-md shadow-accent/25 transition-all duration-500 opacity-0 transform -translate-y-2 z-20 whitespace-nowrap select-none" id="case-line-val-2" style="transform: translateX(0%);"></div>
+          </div>
+          <!-- X-Axis Labels -->
+          <div class="flex justify-between text-[10px] font-bold text-primary/50 uppercase tracking-wider pt-3 border-t border-primary/10 select-none" id="case-line-labels-container">
+            <!-- Dynamically populated -->
+          </div>
+          <!-- Bottom Legend/Subtitle -->
+          <div id="case-line-sub" class="text-center text-[10px] md:text-[11px] font-extrabold text-accent uppercase tracking-wider mt-2 select-none hidden"></div>
+        </div>
+
+        <!-- Pie/Donut Chart Container -->
+        <div id="chart-pie-container" class="absolute inset-x-6 top-20 bottom-6 flex flex-col justify-between items-center hidden">
+          <!-- Centered Pie Chart Area -->
+          <div class="flex-1 flex items-center justify-center w-full">
+            <div class="relative w-56 h-56 md:w-64 md:h-64">
+              <svg class="w-full h-full transform -rotate-90 overflow-visible" viewBox="0 0 100 100">
+                <defs>
+                  <linearGradient id="pie-grad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#6B1D2F" />
+                    <stop offset="100%" stop-color="#b53450" />
+                  </linearGradient>
+                </defs>
+                <!-- Background track -->
+                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="8" class="text-primary/5" />
+                <!-- Active Donut Fill -->
+                <circle id="case-pie-path" cx="50" cy="50" r="40" fill="none" stroke="url(#pie-grad)" stroke-width="8" stroke-linecap="round" class="filter drop-shadow-[0_8px_20px_rgba(107,29,47,0.2)] overflow-visible transition-all duration-[2000ms] ease-[cubic-bezier(0.25,1,0.5,1)]" style="stroke-dasharray: 251.2; stroke-dashoffset: 251.2;" />
+              </svg>
+              <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+                <span class="text-5xl md:text-6xl font-black text-primary tracking-tight" id="case-pie-val">0%</span>
+                <span class="text-[10px] font-bold text-primary/40 uppercase tracking-widest mt-1 select-none">прирост</span>
+              </div>
+            </div>
+          </div>
+          <!-- Bottom description aligned with other charts' x-axis labels -->
+          <div class="w-full flex justify-center pt-3 border-t border-primary/10 select-none">
+            <div class="text-[11px] font-bold text-accent uppercase tracking-wider bg-accent/5 border border-accent/15 px-5 py-1.5 rounded-full select-none cursor-default" id="case-pie-desc">Записей через бота</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline>
+  (() => {
+
+    const caseData = [
+      {
+        title: "Студия растяжки",
+        tag: "Сфера фитнес услуг",
+        prob: "Студия была невидима на онлайн-картах из-за скудного профиля, а красивый Instagram не приносил заявок, которые вдобавок терялись из-за долгих ответов администратора.",
+        sol: "Мы развернули полноценную витрину на картах с LSI-копирайтингом, перестроили SMM на закрытие возражений и подключили чат-бота для выдачи лид-магнитов и мгновенного вовлечения в диалог.",
+        result: "+120",
+        resultSuffix: " записей",
+        chartType: "bar",
+        bar1: "30%",
+        bar2: "100%",
+        val1: "30 заявок",
+        val2: "150 заявок"
+      },
+      {
+        title: "Премиум детейлинг центр",
+        tag: "Сфера автоуслуг",
+        prob: "Сайт без факторов доверия резал конверсию, пустые описания на картах лишали маржинальных заявок, а десятки отзывов без ответа убивали репутацию среди VIP-аудитории.",
+        sol: "Мы создали посадочные страницы под каждую услугу с железобетонными гарантиями, оптимизировали Яндекс Карты скрытыми метаданными и взяли под контроль репутацию, вшив поисковые ключи в ответы на отзывы.",
+        result: "x3",
+        resultSuffix: " заявок",
+        chartType: "line",
+        val1: "",
+        val2: "Рост количества заявок",
+        labels: ["До оптимизации", "С системой Stratum"],
+        points: [
+          { x: 0, y: 100 },
+          { x: 100, y: 10 }
+        ],
+        path: "M 0,100 Q 30,100 100,10",
+        area: "M 0,100 Q 30,100 100,10 L 100,100 L 0,100 Z",
+        val2Left: "50%",
+        val2Bottom: "92%",
+        val2Transform: "translateX(-50%)"
+      },
+      {
+        title: "Салон красоты",
+        tag: "Сфера бьюти услуг",
+        prob: "Ручная обработка сообщений приводила к срыву записей в часы пик, Telegram-канал вызывал рекламную слепоту, а отсутствие напоминаний снижало возвращаемость лояльных клиентов.",
+        sol: "Мы автоматизировали запись через умного Telegram-бота с интеграцией в CRM, органично вшили кросс-продажи в экспертный контент и упаковали профили на картах под главные боли целевой аудитории.",
+        result: "+30%",
+        resultSuffix: " заявок",
+        chartType: "pie",
+        pieVal: "85%",
+        pieOffset: 251.2 * (1 - 0.85),
+        pieDesc: "Записей через бота"
+      },
+      {
+        title: "Specialty кофейня",
+        tag: "Сфера общепита",
+        prob: "Пустая карточка на картах уводила горячий трафик к конкурентам, сотни отзывов оставались без ответа, а охваты в соцсетях никак не конвертировались в реальных гостей в зале.",
+        sol: "Мы оформили поисковую витрину с LSI-ключами, отработали всю базу отзывов поисковыми маркерами, а в соцсетях запустили вовлекающие ролики и автоматизировали лидогенерацию через кодовые слова в Директе.",
+        result: "14",
+        resultSuffix: " часов посадки",
+        chartType: "line",
+        val1: "",
+        val2: "Стабильный поток клиентов",
+        labels: ["8:00", "12:00", "16:00", "19:00", "23:00"],
+        sub: "График посадки с системой Stratum",
+        points: [
+          { x: 0, y: 38 },
+          { x: 25, y: 28 },
+          { x: 50, y: 34 },
+          { x: 75, y: 25 },
+          { x: 100, y: 38 }
+        ],
+        path: "M 0,38 L 25,28 L 50,34 L 75,25 L 100,38",
+        area: "M 0,38 L 25,28 L 50,34 L 75,25 L 100,38 L 100,100 L 0,100 Z",
+        val2Left: "50%",
+        val2Bottom: "92%",
+        val2Transform: "translateX(-50%)"
+      }
+    ];
+
+    const cOverlay = document.getElementById('case-popup-overlay');
+    const cCard = document.getElementById('case-popup-card');
+    let counterAnimationFrame;
+    let pieAnimationFrame;
+    
+    window.openCaseModal = function(index) {
+      const data = caseData[index];
+      const type = data.chartType;
+      
+      document.getElementById('case-popup-title').innerText = data.title;
+      document.getElementById('case-popup-tag').innerText = data.tag;
+      document.getElementById('case-popup-prob').innerText = data.prob;
+      document.getElementById('case-popup-sol').innerText = data.sol;
+      
+      const resEl = document.getElementById('case-popup-result');
+      resEl.innerText = "0" + (data.resultSuffix || "");
+      
+      document.getElementById('chart-bar-container').classList.add('hidden');
+      document.getElementById('chart-line-container').classList.add('hidden');
+      document.getElementById('chart-pie-container').classList.add('hidden');
+      
+      if (type === 'line') {
+        document.getElementById('chart-line-container').classList.remove('hidden');
+        
+        const val1 = document.getElementById('case-line-val-1');
+        if (data.val1) {
+          val1.innerText = data.val1;
+          val1.style.display = '';
+        } else {
+          val1.style.display = 'none';
+        }
+        
+        const val2 = document.getElementById('case-line-val-2');
+        if (data.val2) {
+          val2.innerText = data.val2;
+          val2.style.display = '';
+        } else {
+          val2.style.display = 'none';
+        }
+        
+        const labelsContainer = document.getElementById('case-line-labels-container');
+        labelsContainer.innerHTML = '';
+        if (data.labels) {
+          data.labels.forEach((lbl, idx) => {
+            const el = document.createElement('div');
+            if (idx === data.labels.length - 1 && data.title !== 'Specialty кофейня') {
+              el.className = 'text-right text-accent font-bold';
+            } else if (idx === 0) {
+              el.className = 'text-left';
+            } else if (idx === data.labels.length - 1) {
+              el.className = 'text-right';
+            } else {
+              el.className = 'text-center';
+            }
+            el.innerText = lbl;
+            labelsContainer.appendChild(el);
+          });
+        }
+        
+        const subEl = document.getElementById('case-line-sub');
+        if (data.sub) {
+          subEl.innerText = data.sub;
+          subEl.classList.remove('hidden');
+        } else {
+          subEl.classList.add('hidden');
+        }
+        
+        const path = document.getElementById('case-line-path');
+        const area = document.getElementById('case-line-area');
+        path.setAttribute('d', data.path);
+        area.setAttribute('d', data.area);
+        
+        if (data.val1Left) {
+          val1.style.left = data.val1Left;
+          val1.style.right = 'auto';
+        } else {
+          val1.style.left = '0';
+          val1.style.right = 'auto';
+        }
+        val1.style.bottom = data.val1Bottom || "4px";
+        val1.style.transform = data.val1Transform || "translateX(0%)";
+        
+        if (data.val2Left) {
+          val2.style.left = data.val2Left;
+          val2.style.right = 'auto';
+        } else if (data.val2Right) {
+          val2.style.right = data.val2Right;
+          val2.style.left = 'auto';
+        } else {
+          val2.style.right = '0';
+          val2.style.left = 'auto';
+        }
+        val2.style.bottom = data.val2Bottom || "96%";
+        val2.style.transform = data.val2Transform || "translateX(0%)";
+        
+        path.style.transition = 'none';
+        path.style.strokeDashoffset = '1000';
+        path.style.strokeDasharray = '1000';
+        
+        document.getElementById('case-line-area').classList.remove('opacity-100');
+        
+        const dotsContainer = document.getElementById('case-line-dots-container');
+        dotsContainer.innerHTML = '';
+        
+        document.getElementById('case-line-val-1').classList.remove('opacity-100', 'translate-y-0');
+        document.getElementById('case-line-val-1').classList.add('translate-y-2');
+        document.getElementById('case-line-val-2').classList.remove('opacity-100', 'translate-y-0');
+        document.getElementById('case-line-val-2').classList.add('translate-y-2');
+      } else if (type === 'pie') {
+        document.getElementById('chart-pie-container').classList.remove('hidden');
+        document.getElementById('case-pie-desc').innerText = data.pieDesc;
+        document.getElementById('case-pie-val').innerText = "0%";
+        document.getElementById('case-pie-path').style.strokeDashoffset = '251.2';
+      } else {
+        document.getElementById('chart-bar-container').classList.remove('hidden');
+        document.getElementById('case-bar-1').style.height = '10%';
+        document.getElementById('case-bar-2').style.height = '10%';
+        
+        document.getElementById('case-bar-val-1').innerText = data.val1;
+        document.getElementById('case-bar-val-2').innerText = data.val2;
+        document.getElementById('case-bar-val-1').classList.remove('opacity-100', 'translate-y-0');
+        document.getElementById('case-bar-val-1').classList.add('translate-y-2');
+        document.getElementById('case-bar-val-2').classList.remove('opacity-100', 'translate-y-0');
+        document.getElementById('case-bar-val-2').classList.add('translate-y-2');
+      }
+      
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      document.body.style.overflow = 'hidden';
+      
+      cOverlay.classList.remove('opacity-0', 'pointer-events-none');
+      cCard.classList.remove('scale-95', 'opacity-0');
+      cCard.classList.add('scale-100', 'opacity-100');
+      
+      cancelAnimationFrame(counterAnimationFrame);
+      cancelAnimationFrame(pieAnimationFrame);
+      
+      setTimeout(() => {
+        if (type === 'line') {
+          const path = document.getElementById('case-line-path');
+          const svg = path.ownerSVGElement || path.viewportElement;
+          
+          path.style.transition = 'none';
+          
+          const userLength = path.getTotalLength();
+          const svgRect = svg.getBoundingClientRect();
+          const scaleX = svgRect.width / 100;
+          const scaleY = svgRect.height / 100;
+          const scale = Math.max(scaleX, scaleY);
+          const pixelLength = userLength * scale * 1.15;
+          
+          path.style.strokeDasharray = pixelLength;
+          path.style.strokeDashoffset = pixelLength;
+          
+          const dotsContainer = document.getElementById('case-line-dots-container');
+          dotsContainer.innerHTML = '';
+          if (data.points) {
+            data.points.forEach((pt, idx) => {
+              const dot = document.createElement('div');
+              if (idx === data.points.length - 1) {
+                dot.className = 'absolute w-4.5 h-4.5 bg-accent rounded-full border-2 border-white shadow-lg shadow-accent/30 animate-pulse transition-all duration-500 opacity-0 z-10';
+              } else {
+                dot.className = 'absolute w-3.5 h-3.5 bg-primary rounded-full border-2 border-white shadow-md transition-all duration-500 opacity-0 z-10';
+              }
+              dot.style.transform = 'translate(-50%, 50%)';
+              dot.style.left = `${pt.x}%`;
+              dot.style.bottom = `${100 - pt.y}%`;
+              
+              // Синхронизация задержки с прогрессом кривой Безье cubic-bezier(0.25, 1, 0.5, 1) - easeOutQuart
+              const xNorm = pt.x / 100;
+              const delaySec = Math.max(0, (1 - Math.pow(1 - xNorm, 0.25)) * 2.0 - 0.1);
+              dot.style.transitionDelay = `${delaySec}s`;
+              
+              dotsContainer.appendChild(dot);
+              
+              setTimeout(() => {
+                dot.classList.add('opacity-100');
+              }, 50);
+            });
+          }
+          
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              path.style.transition = 'stroke-dashoffset 2.0s cubic-bezier(0.25, 1, 0.5, 1)';
+              path.style.strokeDashoffset = '0';
+            });
+          });
+          
+          document.getElementById('case-line-area').classList.add('opacity-100');
+          
+          const getDelay = (xPercent) => {
+            const x = parseFloat(xPercent) / 100;
+            return Math.max(0, (1 - Math.pow(1 - x, 0.25)) * 2000 - 100);
+          };
+          const delay1 = data.val1Left ? getDelay(data.val1Left) : 300;
+          const delay2 = data.val2Left ? getDelay(data.val2Left) : 1600;
+          
+          if (data.val1) {
+            setTimeout(() => {
+              document.getElementById('case-line-val-1').classList.remove('translate-y-2');
+              document.getElementById('case-line-val-1').classList.add('opacity-100', 'translate-y-0');
+            }, delay1);
+          }
+          
+          if (data.val2) {
+            setTimeout(() => {
+              document.getElementById('case-line-val-2').classList.remove('translate-y-2');
+              document.getElementById('case-line-val-2').classList.add('opacity-100', 'translate-y-0');
+            }, delay2);
+          }
+        } else if (type === 'pie') {
+          document.getElementById('case-pie-path').style.strokeDashoffset = data.pieOffset;
+          
+          const targetPie = parseFloat(data.pieVal);
+          const durationPie = 2000;
+          const startTimePie = performance.now();
+          
+          const animatePie = (now) => {
+            const elapsed = now - startTimePie;
+            const progress = Math.min(elapsed / durationPie, 1);
+            const easeProgress = 1 - Math.pow(1 - progress, 4); // easeOutQuart
+            const current = Math.floor(easeProgress * targetPie);
+            
+            document.getElementById('case-pie-val').innerText = current + "%";
+            
+            if (progress < 1) {
+              pieAnimationFrame = requestAnimationFrame(animatePie);
+            } else {
+              document.getElementById('case-pie-val').innerText = data.pieVal;
+            }
+          };
+          pieAnimationFrame = requestAnimationFrame(animatePie);
+        } else {
+          document.getElementById('case-bar-1').style.height = data.bar1;
+          document.getElementById('case-bar-2').style.height = data.bar2;
+          
+          document.getElementById('case-bar-val-1').classList.remove('translate-y-2');
+          document.getElementById('case-bar-val-1').classList.add('opacity-100', 'translate-y-0');
+          document.getElementById('case-bar-val-2').classList.remove('translate-y-2');
+          document.getElementById('case-bar-val-2').classList.add('opacity-100', 'translate-y-0');
+        }
+        
+        const targetNum = parseFloat(data.result.replace(/[^0-9.-]/g, ''));
+        if (isNaN(targetNum)) {
+          resEl.innerText = data.result + (data.resultSuffix || "");
+        } else {
+          const prefix = data.result.replace(/[0-9.-].*/, '');
+          const durationCounter = 1500;
+          const startTimeCounter = performance.now();
+          
+          const animateCounter = (now) => {
+            const elapsed = now - startTimeCounter;
+            const progress = Math.min(elapsed / durationCounter, 1);
+            const easeProgress = 1 - Math.pow(1 - progress, 4); // easeOutQuart
+            const current = Math.floor(easeProgress * targetNum);
+            
+            resEl.innerText = prefix + current + (data.resultSuffix || "");
+            
+            if (progress < 1) {
+              counterAnimationFrame = requestAnimationFrame(animateCounter);
+            } else {
+              resEl.innerText = data.result + (data.resultSuffix || "");
+            }
+          };
+          counterAnimationFrame = requestAnimationFrame(animateCounter);
+        }
+      }, 350);
+    };
+
+    window.closeCaseModal = function() {
+      cOverlay.classList.add('opacity-0', 'pointer-events-none');
+      cCard.classList.remove('scale-100', 'opacity-100');
+      cCard.classList.add('scale-95', 'opacity-0');
+      cancelAnimationFrame(counterAnimationFrame);
+      cancelAnimationFrame(pieAnimationFrame);
+      document.body.style.paddingRight = '';
+      document.body.style.overflow = '';
+    };
+
+    
+
+    cOverlay.addEventListener('click', (e) => {
+      if (e.target === cOverlay) window.closeCaseModal();
+    });
+
+    
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (!cOverlay.classList.contains('opacity-0')) {
+          window.closeCaseModal();
+        }
+        if (!mOverlay.classList.contains('opacity-0')) {
+          window.closeMobileCaseModal();
+        }
+      }
+    });
+  
+  })();
+</script>
+</section>

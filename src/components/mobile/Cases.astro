@@ -1,0 +1,248 @@
+---
+import Button from '../ui/Button.astro';
+---
+
+<section id="cases" class="px-6 py-10 md:py-24 bg-white text-primary relative min-h-0 md:min-h-[calc(100dvh-5rem)] flex flex-col justify-center overflow-hidden">
+  <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+  
+  <div class="max-w-6xl mx-auto relative z-10 w-full">
+    <div class="mb-8 md:mb-16 reveal">
+      <div class="flex justify-center mb-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 select-none cursor-default">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+          <span class="text-[11px] font-bold text-primary/70 uppercase tracking-wider">Кейсы</span>
+        </div>
+      </div>
+      <div class="md:flex justify-between items-start">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4 md:mb-0 max-w-2xl tracking-tight text-center md:text-left">Результаты внедрения системы</h2>
+        <div class="flex flex-col items-center md:items-end gap-3 mt-4 md:mt-0 md:pt-3">
+          <p class="text-lg text-primary/70 max-w-sm text-center md:text-right">Нажмите на карточку, чтобы изучить статистику подробно.</p>
+          <Button variant="primary" href="/docs/portfolio.pdf" target="_blank" class="text-sm px-5 py-2.5 rounded-full inline-flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            Открыть PDF-презентацию кейсов
+          </Button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE VERSION -->
+    <div class="block md:hidden">
+      <div class="flex overflow-x-auto snap-x snap-mandatory pt-6 -mt-6 pb-12 -mb-6 -mx-6 px-6 gap-4 no-scrollbar">
+        <!-- Case 1 -->
+        <button onclick="openMobileCaseModal(0)" class="w-full text-left group bg-background border border-primary/10 rounded-3xl p-6 flex flex-col relative overflow-hidden min-w-[85vw] snap-center">
+          <div class="absolute top-6 right-6 w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center">
+            <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-1 text-primary pr-10">Студия растяжки</h3>
+          <div class="inline-block px-2.5 py-0.5 bg-accent/10 text-accent rounded-full text-[10px] font-bold tracking-wide uppercase mb-4 self-start">Сфера фитнес услуг</div>
+          <p class="text-primary/80 text-sm mb-6 leading-relaxed flex-1">Локальное SEO + SMM комплекс = Постоянный поток новых клиентов</p>
+          <div class="mt-auto border-t border-primary/10 pt-4">
+            <div class="text-4xl font-extrabold text-primary tracking-tight">+120</div>
+            <div class="text-xs font-semibold text-primary/60 mt-1 uppercase tracking-wide">новых записей в месяц</div>
+          </div>
+        </button>
+
+        <!-- Case 2 -->
+        <button onclick="openMobileCaseModal(1)" class="w-full text-left group bg-primary text-background border border-primary/10 rounded-3xl p-6 flex flex-col relative overflow-hidden min-w-[85vw] snap-center">
+          <div class="absolute top-6 right-6 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-1 pr-10">Премиум детейлинг центр</h3>
+          <div class="inline-block px-2.5 py-0.5 bg-white/10 text-white rounded-full text-[10px] font-bold tracking-wide uppercase mb-4 self-start">Сфера автоуслуг</div>
+          <p class="text-background/80 text-sm mb-6 leading-relaxed flex-1">SEO оптимизация карт и сайта = увеличение количества клиентов с большим чеком</p>
+          <div class="mt-auto border-t border-white/10 pt-4">
+            <div class="text-4xl font-extrabold text-white tracking-tight">x3</div>
+            <div class="text-xs font-semibold text-white/60 mt-1 uppercase tracking-wide">рост высокомаржинальных заявок</div>
+          </div>
+        </button>
+
+        <!-- Case 3 -->
+        <button onclick="openMobileCaseModal(2)" class="w-full text-left group bg-gradient-to-br from-accent to-[#4A1020] text-white rounded-3xl p-6 flex flex-col relative overflow-hidden min-w-[85vw] snap-center">
+          <div class="absolute top-6 right-6 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-1 pr-10">Салон красоты</h3>
+          <div class="inline-block px-2.5 py-0.5 bg-white/20 text-white rounded-full text-[10px] font-bold tracking-wide uppercase mb-4 self-start">Сфера бьюти услуг</div>
+          <p class="text-white/80 text-sm mb-6 leading-relaxed flex-1">Автоматизация записи в 3 клика 24/7. Возврат "уснувших" клиентов.</p>
+          <div class="mt-auto border-t border-white/20 pt-4">
+            <div class="text-4xl font-extrabold text-white tracking-tight">+30%</div>
+            <div class="text-xs font-semibold text-white/80 mt-1 uppercase tracking-wide">спасенных заявок ночью и в часы пик</div>
+          </div>
+        </button>
+
+        <!-- Case 4 -->
+        <button onclick="openMobileCaseModal(3)" class="w-full text-left group bg-background border border-primary/10 rounded-3xl p-6 flex flex-col relative overflow-hidden min-w-[85vw] snap-center">
+          <div class="absolute top-6 right-6 w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center">
+            <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-1 text-primary pr-10">Specialty кофейня</h3>
+          <div class="inline-block px-2.5 py-0.5 bg-accent/10 text-accent rounded-full text-[10px] font-bold tracking-wide uppercase mb-4 self-start -ml-1">Сфера общепита</div>
+          <p class="text-primary/80 text-sm mb-6 leading-relaxed flex-1">Полная SEO оптимизация карт + новая контент-матрица = постоянный поток клиентов</p>
+          <div class="mt-auto border-t border-primary/10 pt-4">
+            <div class="text-4xl font-extrabold text-primary tracking-tight">14 часов</div>
+            <div class="text-xs font-semibold text-primary/60 mt-1 uppercase tracking-wide">непрерывной посадки клиентов в зале</div>
+          </div>
+        </button>
+      </div>
+    </div> <!-- closes block md:hidden -->
+  </div> <!-- closes max-w-6xl -->
+
+      <!-- Mobile Modal with absolute zero SVG or chart coordinates -->
+      <div id="case-popup-overlay-mobile" class="fixed inset-0 bg-primary/40 backdrop-blur-md z-[100] opacity-0 pointer-events-none transition-all duration-500 flex items-end justify-center">
+        <div id="case-popup-card-mobile" class="bg-background w-full rounded-t-[2rem] p-6 border-t border-primary/10 shadow-[0_-10px_40px_rgba(26,37,48,0.15)] transform translate-y-full opacity-0 transition-all duration-500 relative flex flex-col max-h-[85dvh] overflow-y-auto">
+          <button onclick="closeMobileCaseModal()" class="absolute top-4 right-4 w-10 h-10 bg-white hover:bg-primary/5 rounded-full flex items-center justify-center text-primary border border-primary/5 shadow-sm cursor-pointer z-20" aria-label="Закрыть">
+            <svg class="w-5 h-5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+
+          <div class="relative z-10 flex flex-col mt-4">
+            <div id="case-popup-tag-mobile" class="inline-block px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-bold tracking-wide uppercase mb-3 self-start select-none"></div>
+            <h3 id="case-popup-title-mobile" class="text-2xl font-black text-primary tracking-tight mb-5 leading-tight"></h3>
+            
+            <div class="space-y-4 mb-6">
+              <div class="bg-primary/5 rounded-2xl p-4 border border-primary/5">
+                <div class="text-[10px] text-primary/50 uppercase tracking-wider font-extrabold mb-1">Проблема клиента</div>
+                <p id="case-popup-prob-mobile" class="text-primary/80 text-sm font-semibold leading-relaxed"></p>
+              </div>
+              <div class="bg-white rounded-2xl p-4 border border-primary/5 shadow-sm">
+                <div class="text-[10px] text-accent uppercase tracking-wider font-extrabold mb-1">Что сделало Stratum Agency</div>
+                <p id="case-popup-sol-mobile" class="text-primary/80 text-sm font-semibold leading-relaxed"></p>
+              </div>
+            </div>
+            
+            <div class="bg-accent/5 rounded-2xl p-5 border border-accent/10 flex items-center gap-4 mb-2">
+              <div>
+                <div class="text-[10px] text-primary/50 uppercase tracking-wider font-extrabold mb-1">Главный результат</div>
+                <div class="text-primary/70 text-xs font-semibold">После внедрения системы</div>
+              </div>
+              <div id="case-popup-result-mobile" class="text-2xl font-black text-accent ml-auto tracking-tight"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <script is:inline>
+  (() => {
+
+    const caseData = [
+      {
+        title: "Студия растяжки",
+        tag: "Сфера фитнес услуг",
+        prob: "Студия была невидима на онлайн-картах из-за скудного профиля, а красивый Instagram не приносил заявок, которые вдобавок терялись из-за долгих ответов администратора.",
+        sol: "Мы развернули полноценную витрину на картах с LSI-копирайтингом, перестроили SMM на закрытие возражений и подключили чат-бота для выдачи лид-магнитов и мгновенного вовлечения в диалог.",
+        result: "+120",
+        resultSuffix: " записей",
+        chartType: "bar",
+        bar1: "30%",
+        bar2: "100%",
+        val1: "30 заявок",
+        val2: "150 заявок"
+      },
+      {
+        title: "Премиум детейлинг центр",
+        tag: "Сфера автоуслуг",
+        prob: "Сайт без факторов доверия резал конверсию, пустые описания на картах лишали маржинальных заявок, а десятки отзывов без ответа убивали репутацию среди VIP-аудитории.",
+        sol: "Мы создали посадочные страницы под каждую услугу с железобетонными гарантиями, оптимизировали Яндекс Карты скрытыми метаданными и взяли под контроль репутацию, вшив поисковые ключи в ответы на отзывы.",
+        result: "x3",
+        resultSuffix: " заявок",
+        chartType: "line",
+        val1: "",
+        val2: "Рост количества заявок",
+        labels: ["До оптимизации", "С системой Stratum"],
+        points: [
+          { x: 0, y: 100 },
+          { x: 100, y: 10 }
+        ],
+        path: "M 0,100 Q 30,100 100,10",
+        area: "M 0,100 Q 30,100 100,10 L 100,100 L 0,100 Z",
+        val2Left: "50%",
+        val2Bottom: "92%",
+        val2Transform: "translateX(-50%)"
+      },
+      {
+        title: "Салон красоты",
+        tag: "Сфера бьюти услуг",
+        prob: "Ручная обработка сообщений приводила к срыву записей в часы пик, Telegram-канал вызывал рекламную слепоту, а отсутствие напоминаний снижало возвращаемость лояльных клиентов.",
+        sol: "Мы автоматизировали запись через умного Telegram-бота с интеграцией в CRM, органично вшили кросс-продажи в экспертный контент и упаковали профили на картах под главные боли целевой аудитории.",
+        result: "+30%",
+        resultSuffix: " заявок",
+        chartType: "pie",
+        pieVal: "85%",
+        pieOffset: 251.2 * (1 - 0.85),
+        pieDesc: "Записей через бота"
+      },
+      {
+        title: "Specialty кофейня",
+        tag: "Сфера общепита",
+        prob: "Пустая карточка на картах уводила горячий трафик к конкурентам, сотни отзывов оставались без ответа, а охваты в соцсетях никак не конвертировались в реальных гостей в зале.",
+        sol: "Мы оформили поисковую витрину с LSI-ключами, отработали всю базу отзывов поисковыми маркерами, а в соцсетях запустили вовлекающие ролики и автоматизировали лидогенерацию через кодовые слова в Директе.",
+        result: "14",
+        resultSuffix: " часов посадки",
+        chartType: "line",
+        val1: "",
+        val2: "Стабильный поток клиентов",
+        labels: ["8:00", "12:00", "16:00", "19:00", "23:00"],
+        sub: "График посадки с системой Stratum",
+        points: [
+          { x: 0, y: 38 },
+          { x: 25, y: 28 },
+          { x: 50, y: 34 },
+          { x: 75, y: 25 },
+          { x: 100, y: 38 }
+        ],
+        path: "M 0,38 L 25,28 L 50,34 L 75,25 L 100,38",
+        area: "M 0,38 L 25,28 L 50,34 L 75,25 L 100,38 L 100,100 L 0,100 Z",
+        val2Left: "50%",
+        val2Bottom: "92%",
+        val2Transform: "translateX(-50%)"
+      }
+    ];
+
+    
+    
+    
+
+    window.openMobileCaseModal = function(index) {
+      const data = caseData[index];
+      document.getElementById('case-popup-tag-mobile').innerText = data.tag;
+      document.getElementById('case-popup-title-mobile').innerText = data.title;
+      document.getElementById('case-popup-prob-mobile').innerText = data.prob;
+      document.getElementById('case-popup-sol-mobile').innerText = data.sol;
+      document.getElementById('case-popup-result-mobile').innerText = data.result + (data.resultSuffix || "");
+      
+      const mOverlay = document.getElementById('case-popup-overlay-mobile');
+      const mCard = document.getElementById('case-popup-card-mobile');
+      mOverlay.classList.remove('opacity-0', 'pointer-events-none');
+      mOverlay.classList.add('opacity-100', 'pointer-events-auto');
+      mCard.classList.remove('translate-y-full', 'opacity-0');
+      mCard.classList.add('translate-y-0', 'opacity-100');
+      document.body.style.overflow = 'hidden';
+    };
+
+    window.closeMobileCaseModal = function() {
+      const mOverlay = document.getElementById('case-popup-overlay-mobile');
+      const mCard = document.getElementById('case-popup-card-mobile');
+      mOverlay.classList.add('opacity-0', 'pointer-events-none');
+      mOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+      mCard.classList.remove('translate-y-0', 'opacity-100');
+      mCard.classList.add('translate-y-full', 'opacity-0');
+      document.body.style.overflow = '';
+    };
+
+    
+
+    const mOverlay = document.getElementById('case-popup-overlay-mobile');
+    mOverlay.addEventListener('click', (e) => {
+      if (e.target === mOverlay) window.closeMobileCaseModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (!mOverlay.classList.contains('opacity-0')) {
+          window.closeMobileCaseModal();
+        }
+      }
+    });
+  
+  })();
+</script>
+</section>

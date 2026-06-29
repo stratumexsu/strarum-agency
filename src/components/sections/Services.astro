@@ -1,0 +1,13 @@
+---
+import ServicesDesktop from '../desktop/Services.astro';
+import ServicesMobile from '../mobile/Services.astro';
+---
+
+<section id="services">
+  <div class="hidden md:block">
+    <ServicesDesktop />
+  </div>
+  <div class="block md:hidden">
+    <ServicesMobile />
+  </div>
+</section>

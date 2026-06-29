@@ -1,0 +1,60 @@
+---
+import HeaderDesktop from '../desktop/Header.astro';
+import HeaderMobile from '../mobile/Header.astro';
+import Modal from '../ui/Modal.astro';
+import Button from '../ui/Button.astro';
+---
+
+<div class="hidden md:block">
+  <HeaderDesktop />
+</div>
+<div class="block md:hidden">
+  <HeaderMobile />
+</div>
+
+<Modal id="contact-modal">
+  <div class="flex flex-col text-left p-2">
+    <!-- Логотип и Название (Крупнее, слева) -->
+    <div class="flex items-center gap-0 mb-6">
+      <img src="/logo.png" alt="Stratum Agency Logo" class="w-16 h-16 md:w-20 md:h-20 object-contain mix-blend-multiply -ml-2 select-none" />
+      <h3 class="text-3xl md:text-4xl font-black text-primary tracking-tight -ml-2">Stratum<span class="text-accent">Agency</span></h3>
+    </div>
+    
+    <!-- Заголовок формы (Крупный, жирный) -->
+    <h4 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary mb-8 leading-tight tracking-tight">
+      Свяжитесь с нами и<br/>
+      получите бесплатную<br/>
+      консультацию
+    </h4>
+    
+    <form class="space-y-4 w-full" onsubmit="event.preventDefault(); alert('Заявка отправлена!'); document.getElementById('contact-modal').close();">
+      <div>
+        <input type="text" required class="w-full px-5 py-4 rounded-2xl border border-primary/10 bg-primary/[0.02] text-primary placeholder-primary/40 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/15 focus:bg-white shadow-sm transition-all duration-300 font-semibold" placeholder="Ваше имя">
+      </div>
+      <div>
+        <input type="email" required class="w-full px-5 py-4 rounded-2xl border border-primary/10 bg-primary/[0.02] text-primary placeholder-primary/40 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/15 focus:bg-white shadow-sm transition-all duration-300 font-semibold" placeholder="Ваш Email">
+      </div>
+      <div>
+        <input type="text" class="w-full px-5 py-4 rounded-2xl border border-primary/10 bg-primary/[0.02] text-primary placeholder-primary/40 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/15 focus:bg-white shadow-sm transition-all duration-300 font-semibold" placeholder="Ваш Telegram (@username)">
+      </div>
+      <div>
+        <input type="tel" required class="w-full px-5 py-4 rounded-2xl border border-primary/10 bg-primary/[0.02] text-primary placeholder-primary/40 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/15 focus:bg-white shadow-sm transition-all duration-300 font-semibold" placeholder="Ваш телефон">
+      </div>
+      
+      <div class="space-y-3 pt-3 pb-1">
+        <label class="flex items-start gap-3 text-primary/70 text-sm cursor-pointer group">
+          <input type="checkbox" required class="mt-1 w-4 h-4 rounded border-primary/20 text-accent focus:ring-accent cursor-pointer accent-accent transition-colors">
+          <span class="group-hover:text-primary transition-colors leading-tight select-none font-medium">Я согласен с политикой конфиденциальности</span>
+        </label>
+        <label class="flex items-start gap-3 text-primary/70 text-sm cursor-pointer group">
+          <input type="checkbox" required class="mt-1 w-4 h-4 rounded border-primary/20 text-accent focus:ring-accent cursor-pointer accent-accent transition-colors">
+          <span class="group-hover:text-primary transition-colors leading-tight select-none font-medium">Я согласен получать рассылку</span>
+        </label>
+      </div>
+
+      <Button variant="primary" class="w-full mt-4 py-4.5 text-xl font-extrabold shadow-xl shadow-accent/20 hover:shadow-accent/40 rounded-2xl" type="submit" aria-label="Отправить форму">
+        Отправить заявку
+      </Button>
+    </form>
+  </div>
+</Modal>

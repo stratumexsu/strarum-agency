@@ -1,0 +1,118 @@
+---
+import '../styles/global.css';
+import { SEO } from 'astro-seo';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<SEO
+			title={`${title} | Агентство системного маркетинга Stratum Agency`}
+			description="Оптимизация малого бизнеса под ключ: локальное SEO (Яндекс Карты, 2ГИС), разработка умных чат-ботов и конверсионный SMM. Увеличим поток клиентов и автоматизируем рутину."
+			canonical="https://stratumagency.ru"
+			openGraph={{
+				basic: {
+					title: "Stratum Agency | Продвижение на Картах и оптимизация малого бизнеса",
+					type: "website",
+					image: "https://stratumagency.ru/og-image.jpg",
+					url: "https://stratumagency.ru/",
+				},
+				optional: {
+					description: "Локальное SEO, чат-боты и SMM под ключ для малого бизнеса. Увеличим поток клиентов и автоматизируем рутину без лишних затрат.",
+					siteName: "Stratum Agency",
+				}
+			}}
+			twitter={{
+				card: "summary_large_image",
+				site: "@stratumagency",
+				title: "Stratum Agency | Продвижение на Картах и оптимизация малого бизнеса",
+				description: "Локальное SEO, чат-боты и SMM под ключ для малого бизнеса.",
+				image: "https://stratumagency.ru/og-image.jpg"
+			}}
+			extend={{
+				meta: [
+					{ name: "robots", content: "index, follow" }
+				]
+			}}
+		/>
+	</head>
+	<body class="antialiased min-h-screen flex flex-col overflow-x-hidden bg-background">
+		<slot />
+		
+		<script>
+			// Отключаем запоминание положения скролла и всегда скроллим наверх при обновлении
+			if (history.scrollRestoration) {
+				history.scrollRestoration = 'manual';
+			}
+			window.scrollTo(0, 0);
+
+			// Intersection Observer для анимации появления элементов при скролле
+			// Также инициализируем сразу при первой загрузке
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', initReveal);
+			} else {
+				initReveal();
+			}
+
+			function initReveal() {
+				const sections = document.querySelectorAll('section, footer, header');
+				
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							const container = entry.target;
+							observer.unobserve(container);
+							
+							// Находим все элементы с классом .reveal внутри этой секции
+							const reveals = container.querySelectorAll('.reveal');
+							reveals.forEach((el, index) => {
+								// Задаем красивый каскадный шаг задержки
+								(el as HTMLElement).style.transitionDelay = `${index * 80}ms`;
+								
+								requestAnimationFrame(() => {
+									el.classList.add('active');
+								});
+							});
+						}
+					});
+				}, {
+					threshold: 0.02,
+					rootMargin: '0px 0px -30px 0px' // Запуск чуть раньше появления на экране
+				});
+				
+				sections.forEach((sec) => {
+					if (sec.querySelector('.reveal')) {
+						observer.observe(sec);
+					}
+				});
+				
+				// Резервный обработчик для reveal-элементов вне стандартных секций
+				document.querySelectorAll('.reveal').forEach((el) => {
+					const parent = el.closest('section, footer, header');
+					if (!parent) {
+						const singleObserver = new IntersectionObserver((entries) => {
+							entries.forEach((entry) => {
+								if (entry.isIntersecting) {
+									entry.target.classList.add('active');
+									singleObserver.unobserve(entry.target);
+								}
+							});
+						}, { threshold: 0.05 });
+						singleObserver.observe(el);
+					}
+				});
+			}
+		</script>
+	</body>
+</html>

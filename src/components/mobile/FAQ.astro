@@ -1,0 +1,108 @@
+---
+const faqs = [
+  {
+    title: "Как быстро окупятся ваши услуги?",
+    body: "Мы понимаем, что для малого бизнеса маркетинг — это всегда риск, а деньги бизнеса часто тесно сплетены с личным кошельком. Поэтому мы не предлагаем ждать результатов полгода ради абстрактного «повышения лояльности». Наша система направлена на закрытие дыр, через которые вы теряете деньги прямо сейчас: бот моментально ответит клиенту ночью, а SEO на картах приведет горячих людей «с улицы». По итогам мы предоставляем отчет «как было/как стало» с выделением конкретных результатов, чтобы вы наглядно видели отдачу от инвестиций."
+  },
+  {
+    title: "Когда я увижу первые результаты в виде новых клиентов?",
+    body: "Зависит от выбранных инструментов. Внедрение чат-ботов и публикация роликов по нашим сценариям может дать заявки уже в первые две недели. SEO-оптимизация на Яндекс.Картах и сайте имеет накопительный эффект — заметный рост трафика обычно происходит после 4 недели работы оптимизированной карточки."
+  },
+  {
+    title: "Что будет после того, как вы внедрите систему?",
+    body: "Мы не бросаем клиентов один на один с новыми инструментами. Во-первых, после проведения оптимизации вы получаете подробный отчет о том, какие проблемы были исправлены и как именно это сделано. Во-вторых, для консалтинг-услуг (боты) и комплексного ведения Instagram мы обеспечиваем поддержку: например, есть возможность бесплатно изменять контент внутри бота в зависимости от сроков контент-плана. Мы выстраиваем систему, которая продолжает работать на вас долгое время."
+  },
+  {
+    title: "Мне придется во всем этом разбираться?",
+    body: "Абсолютно нет. Мы понимаем, что у вас нет времени вникать в технические дебри и сложные маркетинговые термины. Наш слоган — «оптимизация малого бизнеса под ключ». Мы берем на себя всю техническую реализацию: от выделения семантического ядра до написания логики работы бота и его интеграции с CRM-системой. Вам не нужно ничего программировать или настраивать, мы сдаем полностью готовую и работающую систему."
+  },
+  {
+    title: "А вдруг вы не поймете специфику моего бизнеса?",
+    body: "Мы категорически против шаблонных постов, которые не приносят реальных записей. Именно поэтому любой проект начинается с глубокого погружения в вашу деятельность и глубинного анализа целевой аудитории с выявлением их страхов и желаний. Мы прописываем живые человеческие сценарии для SMM и ботов, чтобы общение выглядело естественно, экспертно и вызывало доверие у ваших клиентов."
+  },
+  {
+    title: "Не отпугнет ли чат-бот моих клиентов?",
+    body: "Мы не внедряем раздражающих ботов с тупиковыми скриптами. Наш виртуальный менеджер для Instagram или Telegram отвечает клиенту за пару секунд даже ночью, исключая человеческий фактор. Он мягко консультирует, помогает с записью и экономит время ваших администраторов, не давая горячему лиду уйти к конкурентам из-за долгого ожидания."
+  }
+];
+---
+
+<div class="below-fold px-6 py-16 bg-[#FBF9F4] text-primary relative flex flex-col justify-center overflow-hidden">
+  <!-- Soft background ambient glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/3 rounded-full blur-[90px] pointer-events-none -z-10" style="will-change: transform; transform: translateZ(0);"></div>
+
+  <div class="max-w-xl mx-auto w-full z-10 relative">
+    <!-- Header -->
+    <div class="text-center mb-10 reveal">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 mb-4 select-none cursor-default">
+        <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+        <span class="text-[11px] font-bold text-primary/70 uppercase tracking-wider">Ответы</span>
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight">Частые вопросы</h2>
+    </div>
+
+    <!-- Accordion Stack -->
+    <div class="space-y-3.5 w-full mt-6">
+      {faqs.map((faq, idx) => (
+        <div class="faq-item bg-white/70 backdrop-blur-sm border border-primary/5 rounded-2xl transition-all duration-300 shadow-sm reveal">
+          <button 
+            class="faq-trigger w-full flex items-center justify-between p-5 text-left gap-4 cursor-pointer group focus:outline-none select-none"
+            data-index={idx}
+          >
+            <span class="text-base font-bold text-primary group-hover:text-accent transition-colors leading-snug">
+              {faq.title}
+            </span>
+            <span class="faq-icon w-7 h-7 rounded-full bg-primary/5 flex items-center justify-center shrink-0 group-hover:bg-accent/10 transition-all duration-300">
+              <svg class="w-3.5 h-3.5 text-primary/80 group-hover:text-accent transition-transform duration-300 transform arrow-svg" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]">
+            <div class="px-5 pb-5 pt-0">
+              <div class="w-full h-px bg-primary/5 mb-3"></div>
+              <p class="text-sm text-primary/70 leading-relaxed font-medium">
+                {faq.body}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <script is:inline>
+    (() => {
+      document.addEventListener('DOMContentLoaded', () => {
+        const triggers = document.querySelectorAll('.faq-trigger');
+        
+        triggers.forEach(trigger => {
+          trigger.addEventListener('click', () => {
+            const item = trigger.closest('.faq-item');
+            const content = item.querySelector('.faq-content');
+            const arrow = trigger.querySelector('.arrow-svg');
+            
+            const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+            
+            // Close all items first (accordion behavior)
+            document.querySelectorAll('.faq-content').forEach(el => {
+              el.style.maxHeight = '0px';
+            });
+            document.querySelectorAll('.arrow-svg').forEach(el => {
+              el.classList.remove('rotate-180');
+            });
+            
+            // Toggle active state
+            if (!isOpen) {
+              content.style.maxHeight = `${content.scrollHeight}px`;
+              arrow.classList.add('rotate-180');
+            } else {
+              content.style.maxHeight = '0px';
+              arrow.classList.remove('rotate-180');
+            }
+          });
+        });
+      });
+    })();
+  </script>
+</div>

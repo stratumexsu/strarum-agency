@@ -1,0 +1,69 @@
+---
+import Button from '../ui/Button.astro';
+
+const stages = [
+  {
+    num: "01",
+    title: "Аудит",
+    short: "Первоначальный аудит компании и выделение слабых мест в текущей системе.",
+    detail: "Глубокое погружение в бизнес-процессы вашей компании. Мы проводим полный аудит вашего бизнеса в сети: оцениваем SMM, локальное SEO и процесс обработки заявок. Наша цель — выявить слабые места, где бизнес теряет органический трафик, упускает звонки и отдает прибыль конкурентам. Вы получаете честную, оцифрованную картину текущей ситуации и понимание, почему старые методы перестали работать."
+  },
+  {
+    num: "02",
+    title: "Аналитика",
+    short: "Глубинный анализ ЦА + детальный аудит процессов с выявлением потенциальных точек роста.",
+    detail: "Чтобы система приносила деньги, нужно понимать тех, кто платит. Мы проводим глубинный анализ целевой аудитории: исследуем их реальные страхи, инсайты и желания. Это позволяет нам точно понять, почему люди уходят без покупки и как вернуть их за счет апсейла. На основе этих данных мы составляем пошаговый план оптимизации, который бьет точно в цель, а не строится на догадках."
+  },
+  {
+    num: "03",
+    title: "Оптимизация",
+    short: "Проведение оптимизации бизнеса, внедрение воронок, ботов и контент-стратегий.",
+    detail: "Переходим от теории к практике и забираем всю рутину на себя. Мы настраиваем контент-матрицу, выводим карточку на Яндексе в топ по району и внедряем умных ботов (TG/IG) для круглосуточной записи. Мы работаем полностью самостоятельно. От вас не требуется писать тексты или контролировать каждый наш шаг — мы просто превращаем ваш бизнес в отлаженный механизм по генерации лидов."
+  },
+  {
+    num: "04",
+    title: "Результат",
+    short: "Предоставление отчетности «было/стало», выделение ожидаемых результатов и сроков.",
+    detail: "По итогам работы вы получаете подробный и понятный отчет о том, какие конкретно проблемы были исправлены. Мы показываем результаты в твердом формате «как было / как стало», выделяем сроки получения новых результатов и даем стратегию удержания аудитории. Итог: сэкономленное время сотрудников и новый трафик, готовый к покупке."
+  }
+];
+---
+
+<section class="below-fold px-6 py-12 bg-primary relative overflow-hidden text-white flex flex-col justify-center">
+  <!-- Subtle background glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[100px] pointer-events-none z-0" style="will-change: transform; transform: translateZ(0);"></div>
+
+  <div class="w-full max-w-xl mx-auto relative z-10">
+    <h2 class="text-2xl font-extrabold mb-8 tracking-tight reveal whitespace-nowrap">
+      Этапы <span class="text-accent">оптимизации</span>
+    </h2>
+
+    <!-- MOBILE VERSION -->
+    <div class="mt-6">
+      <div class="space-y-6 relative before:absolute before:left-[18px] before:top-2 before:bottom-2 before:w-px before:bg-white/10">
+        {stages.map((stage) => (
+          <div class="flex items-start gap-4 relative reveal">
+            <!-- Timeline node -->
+            <div class="w-9 h-9 rounded-full bg-primary border border-white/20 flex items-center justify-center shrink-0 z-10 shadow-lg">
+              <span class="text-accent font-extrabold text-sm select-none">{stage.num}</span>
+            </div>
+            <!-- Content -->
+            <div class="flex-1 pt-1">
+              <h4 class="text-lg font-bold text-white mb-1 leading-tight">{stage.title}</h4>
+              <p class="text-white/60 text-sm leading-relaxed font-normal">
+                {stage.short}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 flex justify-center reveal">
+        <Button variant="primary" href="#consultation" class="text-base px-8 py-3.5 shadow-md shadow-accent/20 w-auto justify-center text-center">
+          Получить консультацию
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
+
+

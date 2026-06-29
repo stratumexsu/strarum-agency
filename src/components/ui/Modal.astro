@@ -1,0 +1,22 @@
+---
+interface Props {
+  id: string;
+}
+const { id } = Astro.props;
+---
+<dialog id={id} aria-labelledby={`${id}-title`} class="backdrop:bg-primary/60 backdrop:backdrop-blur-sm rounded-3xl p-0 shadow-2xl bg-white text-primary border-none max-w-lg w-full m-auto outline-none transition-all open:animate-in open:fade-in open:zoom-in-95">
+  <div class="p-8 relative">
+    <button type="button" class="absolute top-6 right-6 text-primary/50 hover:text-primary transition-all duration-300 focus:outline-none cursor-pointer group" onclick={`document.getElementById('${id}').close()`}>
+      <svg class="group-hover:rotate-90 transition-transform duration-300 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      <span class="sr-only">Закрыть</span>
+    </button>
+    <slot />
+  </div>
+</dialog>
+
+<style>
+  dialog::backdrop {
+    background-color: rgba(26, 37, 48, 0.6);
+    backdrop-filter: blur(4px);
+  }
+</style>

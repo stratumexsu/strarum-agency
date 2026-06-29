@@ -1,0 +1,13 @@
+---
+import PricingDesktop from '../desktop/Pricing.astro';
+import PricingMobile from '../mobile/Pricing.astro';
+---
+
+<section id="pricing">
+  <div class="hidden md:block">
+    <PricingDesktop />
+  </div>
+  <div class="block md:hidden">
+    <PricingMobile />
+  </div>
+</section>

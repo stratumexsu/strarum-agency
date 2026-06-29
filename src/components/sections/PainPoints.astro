@@ -1,0 +1,13 @@
+---
+import PainPointsDesktop from '../desktop/PainPoints.astro';
+import PainPointsMobile from '../mobile/PainPoints.astro';
+---
+
+<section id="pain-points">
+  <div class="hidden md:block">
+    <PainPointsDesktop />
+  </div>
+  <div class="block md:hidden">
+    <PainPointsMobile />
+  </div>
+</section>
